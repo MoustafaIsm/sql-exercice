@@ -27,12 +27,12 @@ CREATE TABLE IF NOT EXISTS `universitydb`.`rooms` (
 -- Table `universitydb`.`courses`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `universitydb`.`courses` (
-  `course_name` VARCHAR(255) NOT NULL AUTO_INCREMENT,
+  `course_name` VARCHAR(255) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `start_time` TIME NULL,
   `end_time` TIME NULL,
   `room_id` INT NOT NULL,
-  PRIMARY KEY (`course_name`, `room_id`),
+  PRIMARY KEY (`course_name`),
   CONSTRAINT `fk_courses_rooms`
     FOREIGN KEY (`room_id`)
     REFERENCES `universitydb`.`rooms` (`id`)
