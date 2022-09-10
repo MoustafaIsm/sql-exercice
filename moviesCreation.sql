@@ -4,7 +4,7 @@ USE `moviesdb` ;
 -- Table `moviesdb`.`persons`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `moviesdb`.`persons` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `dob` DATE NULL,
   PRIMARY KEY (`id`));
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `moviesdb`.`persons` (
 -- Table `moviesdb`.`movies`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `moviesdb`.`movies` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `year` INT NULL,
   `rating` DOUBLE NULL,
