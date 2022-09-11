@@ -27,3 +27,8 @@ FROM departments d, majorsin m, enrolled e
 WHERE d.id = m.department_id AND m.student_id = e.student_id AND d.name = "CS" AND e.crn = "CSC275"
 
 -- Question 7
+SELECT COUNT(m.student_id)
+FROM majorsin m, departments d
+WHERE m.department_id = d.id AND d.name = "CS"
+
+-- Question 8
