@@ -21,4 +21,9 @@ WHERE NOT EXISTS (
     FROM students s, enrolled e
     WHERE s.id = e.student_id)
 
---Quetsion 6
+-- Quetsion 6
+SELECT COUNT(e.student_id)
+FROM departments d, majorsin m, enrolled e
+WHERE d.id = m.department_id AND m.student_id = e.student_id AND d.name = "CS" AND e.crn = "CSC275"
+
+-- Question 7
