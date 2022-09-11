@@ -8,3 +8,9 @@ SELECT *
 FROM courses c
 HAVING c.start_time = MIN(c.start_time)
 
+-- Question 3
+SELECT COUNT(DISTINCT m.department_id)
+FROM majorsin m
+
+-- Question 4 
+

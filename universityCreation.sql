@@ -27,12 +27,12 @@ CREATE TABLE IF NOT EXISTS `universitydb`.`rooms` (
 -- Table `universitydb`.`courses`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `universitydb`.`courses` (
-  `course_name` VARCHAR(255) NOT NULL,
+  `crn` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `start_time` TIME NULL,
   `end_time` TIME NULL,
   `room_id` INT NOT NULL,
-  PRIMARY KEY (`course_name`),
+  PRIMARY KEY (`crn`),
   CONSTRAINT `fk_courses_rooms`
     FOREIGN KEY (`room_id`)
     REFERENCES `universitydb`.`rooms` (`id`)
@@ -59,13 +59,13 @@ CREATE TABLE IF NOT EXISTS `universitydb`.`majorsIn` (
 -- Table `universitydb`.`enrolled`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `universitydb`.`enrolled` (
-  `course_name` VARCHAR(255) NOT NULL,
+  `crn` INT NOT NULL,
   `student_id` INT NOT NULL,
   `credit_status` VARCHAR(255) NULL,
-  PRIMARY KEY (`course_name`, `student_id`),
+  PRIMARY KEY (`crn`, `student_id`),
   CONSTRAINT `fk_courses_has_students_courses1`
-    FOREIGN KEY (`course_name`)
-    REFERENCES `universitydb`.`courses` (`course_name`)
+    FOREIGN KEY (`crn`)
+    REFERENCES `universitydb`.`courses` (`crn`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_courses_has_students_students1`
