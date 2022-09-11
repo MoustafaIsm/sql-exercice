@@ -37,3 +37,7 @@ FROM majorsin m
 GROUP BY m.student_id
 
 -- Question 9
+SELECT d.name, COUNT(m.student_id) 
+FROM departments d, majorsin m
+WHERE d.id = m.department_id
+HAVING COUNT(m.student_id) > 1
