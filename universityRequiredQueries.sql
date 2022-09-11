@@ -32,3 +32,8 @@ FROM majorsin m, departments d
 WHERE m.department_id = d.id AND d.name = "CS"
 
 -- Question 8
+SELECT m.student_id, COUNT(m.department_id)
+FROM majorsin m
+GROUP BY m.student_id
+
+-- Question 9
